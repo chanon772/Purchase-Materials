@@ -11,5 +11,6 @@ import { RouterModule } from '@angular/router';
   styleUrls: ['./purchasing.component.css']
 })
 export class PurchasingComponent {
+  
  @Input() purchasing!: Purchasingmaterials
 }
