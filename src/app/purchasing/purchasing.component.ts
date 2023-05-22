@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Purchasingmaterials } from '../purchasingmaterials';
 
 @Component({
   selector: 'app-purchasing',
@@ -9,5 +10,5 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./purchasing.component.css']
 })
 export class PurchasingComponent {
-
+ @Input() purchasing!: Purchasingmaterials
 }
