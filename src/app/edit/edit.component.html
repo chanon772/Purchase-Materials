@@ -1,1 +1,68 @@
-<p>edit works!</p>
+
+<section class="form-control">
+    <h2 class="section-heading">Edit Purchase Material</h2>
+    <form>
+        <div class="form-group">
+            <div class="form group col-5">
+                <label for="place" class="form-label">Place</label>
+                <input type="text" class="form-control" id="place" name="place" [(ngModel)]="product.place" />
+            </div>
+
+            <div class="form group col-5">
+                <label for="division" class="form-label">Division</label>
+                <input type="text" class="form-control" id="division" name="division" [(ngModel)]="product.division" />
+            </div>
+
+            <div class="form group col-5">
+                <label for="opec" class="form-label">Opec</label>
+                <input type="text" class="form-control" id="opec" name="opec" [(ngModel)]="product.opec" />
+            </div>
+
+            <div class="form group col-5">
+                <label for="itemNo" class="form-label">Item No</label>
+                <input type="text" class="form-control" id="itemNo" name="itemNo" [(ngModel)]="product.itemNo" />
+            </div>
+
+            <div class="form group col-5">
+                <label for="itemName" class="form-label">Item Name</label>
+                <input type="text" class="form-control" id="itemName" name="itemName" [(ngModel)]="product.itemName" />
+            </div>
+
+            <div class="form group col-5">
+                <label for="onHand" class="form-label">On Hand</label>
+                <input type="text" class="form-control" id="onHand" name="onHand" [(ngModel)]="product.onHand" />
+            </div>
+
+            <div class="form group col-5">
+                <label for="mainWarehouse" class="form-label">Main Warhouse</label>
+                <input type="text" class="form-control" id="mainWarhouse" name="mainWarhouse" [(ngModel)]="product.mainWarehouse" />
+            </div>
+
+            <div class="form group col-5">
+                <label for="mainLocation" class="form-label">Main Location</label>
+                <input type="text" class="form-control" id="mainLocation" name="mainLocation" [(ngModel)]="product.mainLocation" />
+            </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-sm">
+                    <div class="col-6 col-md-4">
+                        <button class="btn btn-outline-primary" type="button" (click)="Update()">Update</button> 
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div class="col-6 col-md-4">
+                        <button class="btn btn-outline-danger" type="button" (click)="Delete()">Delete</button> 
+                    </div>
+                </div>
+
+                <div class="col-sm">
+                    <div class="col-6 col-md-4">
+                        <button class="btn btn-outline-dark" type="button" [routerLink]="['/']">Back</button> 
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </form>
+</section>

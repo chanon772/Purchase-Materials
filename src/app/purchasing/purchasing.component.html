@@ -1,1 +1,9 @@
-<p>purchasing works!</p>
+<section>
+    <form>
+        <input type="text" placeholder="itemName" #filter>
+        <button class="primary" type="button" (click)="">Search</button>
+    </form>
+</section>
+<section class="listing">
+    <button class="btn btn-outline-primary" type="button" [routerLink]="['/edit', housingLocation.place,housingLocation.division,housingLocation.opec,housingLocation.itemNo]">Edit</button>
+</section> 

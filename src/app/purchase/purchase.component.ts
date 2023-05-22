@@ -56,14 +56,10 @@ export class PurchaseComponent {
     );
 
   }
-
-
   constructor() {
     this.purchasingService.getAllPurchaseMaterials().subscribe((purchasingList: Purchasingmaterials[]) => {
         this.purchasingList = purchasingList;
     }); 
   }
-
-
 
 }

@@ -10,5 +10,6 @@ import { Purchasingmaterials } from '../purchasingmaterials';
   styleUrls: ['./purchasing.component.css']
 })
 export class PurchasingComponent {
+  
  @Input() purchasing!: Purchasingmaterials
 }
