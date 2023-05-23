@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, Input, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PurchasingService } from '../purchasing.service';
 import { PurchasingComponent } from '../purchasing/purchasing.component';
@@ -13,6 +13,7 @@ import { Purchasingmaterials } from '../purchasingmaterials';
   styleUrls: ['./purchase.component.css']
 })
 export class PurchaseComponent {
+
   purchasingService: PurchasingService = inject(PurchasingService);
   purchasingList: Purchasingmaterials[] = [];
 
@@ -29,7 +30,7 @@ export class PurchaseComponent {
 
   submitted = false;
 
-  Submit(){
+  Submit() {
     this.purchasingService.add(
       this.applyForm.value.place ?? '',
       this.applyForm.value.division ?? '',
@@ -43,10 +44,12 @@ export class PurchaseComponent {
     ).subscribe(
       response => {
         console.log(response);
-        this.purchasingList.push({place:this.applyForm.value.place ?? '', division:this.applyForm.value.division ?? '',opec:this.applyForm.value.opec ?? '',
-        itemNo:this.applyForm.value.itemNo ?? '',itemName: this.applyForm.value.itemName ?? '', onHand: this.applyForm.value.onHand ?? 0, 
-        mainWarehouse: this.applyForm.value.mainWarehouse ?? '',mainLocation: this.applyForm.value.mainLocation ?? ''});
-        this.submitted=true;
+        this.purchasingList.push({
+          place: this.applyForm.value.place ?? '', division: this.applyForm.value.division ?? '', opec: this.applyForm.value.opec ?? '',
+          itemNo: this.applyForm.value.itemNo ?? '', itemName: this.applyForm.value.itemName ?? '', onHand: this.applyForm.value.onHand ?? 0,
+          mainWarehouse: this.applyForm.value.mainWarehouse ?? '', mainLocation: this.applyForm.value.mainLocation ?? ''
+        });
+        this.submitted = true;
         this.applyForm.reset();
       },
 
@@ -56,10 +59,22 @@ export class PurchaseComponent {
     );
 
   }
+
+  onDelete(purchasing: Purchasingmaterials) {
+    console.log(purchasing);
+    if (purchasing == undefined) {
+      return
+    }
+    const index = this.purchasingList.indexOf(purchasing);
+    if (index > -1) {
+      this.purchasingList.splice(index, 1);
+    }
+  }
+
   constructor() {
     this.purchasingService.getAllPurchaseMaterials().subscribe((purchasingList: Purchasingmaterials[]) => {
-        this.purchasingList = purchasingList;
-    }); 
+      this.purchasingList = purchasingList;
+    });
   }
 
 }

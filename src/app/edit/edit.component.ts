@@ -30,18 +30,18 @@ export class EditComponent {
 
   submitted = false;
 
-  Delete(): void {
-    this.purchasingService.delete(this.product).subscribe(
-      response => {
-        console.log(response);
-        this.submitted = true;
-        this.router.navigate(['/']);
-      },
-      error => {
-        console.log(error);
-      }
-    );
-  }
+  // Delete(): void {
+  //   this.purchasingService.delete(this.product).subscribe(
+  //     response => {
+  //       console.log(response);
+  //       this.submitted = true;
+  //       this.router.navigate(['/']);
+  //     },
+  //     error => {
+  //       console.log(error);
+  //     }
+  //   );
+  // }
 
   Update(): void {
     this.purchasingService.update(this.product).subscribe(

@@ -33,7 +33,7 @@ export class PurchasingService {
   }
 
   search(data:Purchasingmaterials){
-    return this.http.get<any[]>(`${this.post_url}/${data.place}/${data.division}/${data.opec}/${data.itemNo}/All`);
+    return this.http.get<any[]>(`${this.post_url}/${data.place}/${data.division}/${data.opec}/${data.itemNo}`);
   }
 
 

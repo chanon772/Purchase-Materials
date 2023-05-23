@@ -1,26 +1,25 @@
-
 <div class="container">
     <div class="row">
-        <div class="col">  
+        <div class="col">
             <!-- Table -->
             <section class="results">
-            <h2>Purchase Materials Table</h2>
+                <h2>Purchase Materials Table</h2>
                 <table class="table table-bordered table-dark table-md">
                     <thead>
-                    <tr>
-                        <th>Place</th>
-                        <th>Division</th>
-                        <th>Opec</th>
-                        <th>Item No.</th>
-                        <th>Item Name</th>
-                        <th>On Hand</th>
-                        <th>Main Warehouse</th>
-                        <th>Main Location</th>
-                    </tr>
+                        <tr>
+                            <th>Place</th>
+                            <th>Division</th>
+                            <th>Opec</th>
+                            <th>Item No.</th>
+                            <th>Item Name</th>
+                            <th>On Hand</th>
+                            <th>Main Warehouse</th>
+                            <th>Main Location</th>
+                        </tr>
                     </thead>
-            
-                    <tbody> 
-                        <tr *ngFor ="let purchasing of purchasingList">
+
+                    <tbody>
+                        <tr *ngFor="let purchasing of purchasingList">
                             <td style="text-align:center">{{purchasing!.place}}</td>
                             <td style="text-align:center">{{purchasing!.division}}</td>
                             <td style="text-align:center">{{purchasing!.opec}}</td>
@@ -29,7 +28,7 @@
                             <td style="text-align:center">{{purchasing!.onHand}}</td>
                             <td style="text-align:center">{{purchasing!.mainWarehouse}}</td>
                             <td style="text-align:center">{{purchasing!.mainLocation}}</td>
-                            <app-purchasing [purchasing]="purchasing"></app-purchasing>
+                            <app-purchasing [purchasing]="purchasing" (result)="onDelete($event)"></app-purchasing>
                         </tr>
                     </tbody>
                 </table>
@@ -41,42 +40,46 @@
                 <div class="form-group-row">
                     <div class="form group col-10">
                         <label for="place" class="form-label">Place</label>
-                        <input type="text" class="form-control" id="place" name="place" formControlName="place"/>
+                        <input type="text" class="form-control" id="place" name="place" formControlName="place" />
                     </div>
-        
+
                     <div class="form group col-10">
                         <label for="division" class="form-label">Division</label>
-                        <input type="text"class="form-control"id="division"name="division"formControlName="division"/>
+                        <input type="text" class="form-control" id="division" name="division"
+                            formControlName="division" />
                     </div>
-        
+
                     <div class="form group col-10">
                         <label for="opec" class="form-label">Opec</label>
-                        <input type="text" class="form-control" id="opec" name="opec" formControlName="opec"/>
+                        <input type="text" class="form-control" id="opec" name="opec" formControlName="opec" />
                     </div>
-        
+
                     <div class="form group col-10">
                         <label for="item-no" class="form-label">Item No</label>
-                        <input type="text" class="form-control" id="item-no" name="item-no" formControlName="itemNo"/>
+                        <input type="text" class="form-control" id="item-no" name="item-no" formControlName="itemNo" />
                     </div>
-        
+
                     <div class="form group col-10">
                         <label for="item-name" class="form-label">Item Name</label>
-                        <input type="text" class="form-control" id="item-name" name="item-name" formControlName="itemName"/>
+                        <input type="text" class="form-control" id="item-name" name="item-name"
+                            formControlName="itemName" />
                     </div>
-        
+
                     <div class="form group col-10">
                         <label for="on-hand" class="form-label">On Hand</label>
-                        <input type="text" class="form-control" id="on-hand" name="on-hand" formControlName="onHand"/>
+                        <input type="text" class="form-control" id="on-hand" name="on-hand" formControlName="onHand" />
                     </div>
-        
+
                     <div class="form group col-10">
                         <label for="main-warehouse" class="form-label">Main Warehouse</label>
-                        <input type="text"  class="form-control" id="main-warhouse" name="main-warhouse" formControlName="mainWarehouse"/>
+                        <input type="text" class="form-control" id="main-warhouse" name="main-warhouse"
+                            formControlName="mainWarehouse" />
                     </div>
-        
+
                     <div class="form group col-10">
                         <label for="main-location" class="form-label">Main Location</label>
-                        <input type="text" class="form-control" id="main-location" name="main-location" formControlName="mainLocation"/>
+                        <input type="text" class="form-control" id="main-location" name="main-location"
+                            formControlName="mainLocation" />
                     </div>
                 </div>
                 <div class="col-auto">
