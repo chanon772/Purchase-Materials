@@ -1,10 +1,48 @@
 <div class="container">
     <div class="row">
         <div class="col">
+            <h2>Purchase Materials Table</h2>
+            <form>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col">
+
+                            <div class="form group col-10">
+
+                                <label for="place" class="form-label">Place</label>
+                                <input type="text" class="form-control" id="place" name="place"
+                                    [(ngModel)]="product.place" />
+                            </div>
+
+                            <div class="form group col-10">
+                                <label for="division" class="form-label">Division</label>
+                                <input type="text" class="form-control" id="division" name="division"
+                                    [(ngModel)]="product.division" />
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="form group col-10">
+                                <label for="opec" class="form-label">Opec</label>
+                                <input type="text" class="form-control" id="opec" name="opec"
+                                    [(ngModel)]="product.opec" />
+                            </div>
+
+                            <div class="form group col-10">
+                                <label for="itemNo" class="form-label">Item No</label>
+                                <input type="text" class="form-control" id="itemNo" name="itemNo"
+                                    [(ngModel)]="product.itemNo" />
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary mb-2" type="button" (click)="Search()">Search</button>
+                </div>
+            </form>
+
             <!-- Table -->
             <section class="results">
-                <h2>Purchase Materials Table</h2>
-                <table class="table table-bordered table-dark table-md">
+                <!-- <h2>Purchase Materials Table</h2> -->
+                <table class="table table-bordered table-dark table-sm">
                     <thead>
                         <tr>
                             <th>Place</th>
@@ -38,45 +76,45 @@
             <h2 class="section-heading">Add New Purchase Materials</h2>
             <form [formGroup]="applyForm" (submit)="Submit()">
                 <div class="form-group-row">
-                    <div class="form group col-10">
+                    <div class="form group col-20">
                         <label for="place" class="form-label">Place</label>
                         <input type="text" class="form-control" id="place" name="place" formControlName="place" />
                     </div>
 
-                    <div class="form group col-10">
+                    <div class="form group col-20">
                         <label for="division" class="form-label">Division</label>
                         <input type="text" class="form-control" id="division" name="division"
                             formControlName="division" />
                     </div>
 
-                    <div class="form group col-10">
+                    <div class="form group col-20">
                         <label for="opec" class="form-label">Opec</label>
                         <input type="text" class="form-control" id="opec" name="opec" formControlName="opec" />
                     </div>
 
-                    <div class="form group col-10">
+                    <div class="form group col-20">
                         <label for="item-no" class="form-label">Item No</label>
                         <input type="text" class="form-control" id="item-no" name="item-no" formControlName="itemNo" />
                     </div>
 
-                    <div class="form group col-10">
+                    <div class="form group col-20">
                         <label for="item-name" class="form-label">Item Name</label>
                         <input type="text" class="form-control" id="item-name" name="item-name"
                             formControlName="itemName" />
                     </div>
 
-                    <div class="form group col-10">
+                    <div class="form group col-20">
                         <label for="on-hand" class="form-label">On Hand</label>
                         <input type="text" class="form-control" id="on-hand" name="on-hand" formControlName="onHand" />
                     </div>
 
-                    <div class="form group col-10">
+                    <div class="form group col-20">
                         <label for="main-warehouse" class="form-label">Main Warehouse</label>
                         <input type="text" class="form-control" id="main-warhouse" name="main-warhouse"
                             formControlName="mainWarehouse" />
                     </div>
 
-                    <div class="form group col-10">
+                    <div class="form group col-20">
                         <label for="main-location" class="form-label">Main Location</label>
                         <input type="text" class="form-control" id="main-location" name="main-location"
                             formControlName="mainLocation" />

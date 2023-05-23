@@ -2,13 +2,13 @@ import { Component, Input, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PurchasingService } from '../purchasing.service';
 import { PurchasingComponent } from '../purchasing/purchasing.component';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Purchasingmaterials } from '../purchasingmaterials';
 
 @Component({
   selector: 'app-purchase',
   standalone: true,
-  imports: [CommonModule, PurchasingComponent, ReactiveFormsModule],
+  imports: [CommonModule, PurchasingComponent, ReactiveFormsModule, FormsModule],
   templateUrl: './purchase.component.html',
   styleUrls: ['./purchase.component.css']
 })
@@ -16,6 +16,17 @@ export class PurchaseComponent {
 
   purchasingService: PurchasingService = inject(PurchasingService);
   purchasingList: Purchasingmaterials[] = [];
+
+  product: Purchasingmaterials = {
+    place: 'T3',
+    division: '71',
+    opec: 'DZ',
+    itemNo: 'All',
+    itemName: '',
+    onHand: 0,
+    mainWarehouse: '',
+    mainLocation: ''
+  }
 
   applyForm = new FormGroup({
     place: new FormControl(''),
@@ -73,6 +84,15 @@ export class PurchaseComponent {
 
   constructor() {
     this.purchasingService.getAllPurchaseMaterials().subscribe((purchasingList: Purchasingmaterials[]) => {
+      this.purchasingList = purchasingList;
+    });
+  }
+
+  Search(): void {
+    if (this.product.itemNo == ""){
+      this.product.itemNo = "All";
+    }
+    this.purchasingService.search(this.product).subscribe((purchasingList: Purchasingmaterials[]) => {
       this.purchasingList = purchasingList;
     });
   }
