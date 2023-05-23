@@ -19,7 +19,7 @@ table, th, td {
   .form-group {
     color: var(--primary-color);
   }
-  .container {
+  .container-fluid {
     padding: 25px 50px;
     color: var(--primary-color);
   }
