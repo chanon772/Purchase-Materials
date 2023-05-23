@@ -82,12 +82,6 @@ export class PurchaseComponent {
     }
   }
 
-  constructor() {
-    this.purchasingService.getAllPurchaseMaterials().subscribe((purchasingList: Purchasingmaterials[]) => {
-      this.purchasingList = purchasingList;
-    });
-  }
-
   Search(): void {
     if (this.product.itemNo == ""){
       this.product.itemNo = "All";
@@ -96,5 +90,13 @@ export class PurchaseComponent {
       this.purchasingList = purchasingList;
     });
   }
+
+  constructor() {
+    this.purchasingService.getAllPurchaseMaterials().subscribe((purchasingList: Purchasingmaterials[]) => {
+      this.purchasingList = purchasingList;
+    });
+  }
+
+  
 
 }
