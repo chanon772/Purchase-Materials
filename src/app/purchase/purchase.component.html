@@ -1,6 +1,43 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-8">
+            <h2>Purchase Materials Table</h2>
+            <form>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col">
+
+                            <div class="form group col-20">
+
+                                <label for="place" class="form-label">Place</label>
+                                <input type="text" class="form-control" id="place" name="place"
+                                    [(ngModel)]="product.place" />
+                            </div>
+
+                            <div class="form group col-20">
+                                <label for="division" class="form-label">Division</label>
+                                <input type="text" class="form-control" id="division" name="division"
+                                    [(ngModel)]="product.division" />
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="form group col-20">
+                                <label for="opec" class="form-label">Opec</label>
+                                <input type="text" class="form-control" id="opec" name="opec"
+                                    [(ngModel)]="product.opec" />
+                            </div>
+
+                            <div class="form group col-20">
+                                <label for="itemNo" class="form-label">Item No</label>
+                                <input type="text" class="form-control" id="itemNo" name="itemNo"
+                                    [(ngModel)]="product.itemNo" />
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary mb-2" type="button" (click)="Search()">Search</button>
+                </div>
+            </form>
             <!-- Table -->
             <section class="results">
                 <!-- <h2>Purchase Materials Table</h2> -->
